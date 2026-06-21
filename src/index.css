@@ -75,10 +75,10 @@ svg {
   position: absolute;
   left: 50%;
   top: 20px;
-  line-height: 60px;
   transform: translateX(-50%);
   white-space: nowrap;
   text-align: center;
+  line-height: 12vw;
 }
 
 h1 {
@@ -97,6 +97,11 @@ h1 span {
     appear .7s ease-in-out .5s 1;
   animation-fill-mode: forwards;
   display: inline-block;
+}
+
+.n-1 {
+
+  animation-delay: -.5s;
 }
 
 .n1 {
