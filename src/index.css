@@ -30,6 +30,13 @@
   }
 }
 
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  width: 100%;
+
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;
@@ -59,6 +66,7 @@ svg {
   height: 100%;
   position: relative;
   --max: 1.12;
+  width: 100%;
   overflow: visible;
 
 }
@@ -67,7 +75,6 @@ svg {
   position: absolute;
   left: 50%;
   top: 20px;
-  font-size: 50px;
   line-height: 60px;
   transform: translateX(-50%);
   white-space: nowrap;
@@ -81,7 +88,33 @@ h1 {
   font-weight: 400;
   font-style: normal;
   color: white;
+  font-size: 12.2vw;
 }
+
+h1 span {
+  opacity: -0;
+  animation:
+    appear .7s ease-in-out .5s 1;
+  animation-fill-mode: forwards;
+  display: inline-block;
+}
+
+.n1 {
+
+  animation-delay: 1.4s;
+}
+
+.n1:nth-child(2) {
+  animation:
+    appear .7s ease-in-out .5s 1, flash .6s ease-in-out .5s infinite alternate;
+  animation-delay: 1.8s, 2.3s;
+  animation-fill-mode: forwards, both;
+}
+
+.n1:nth-child(3) {
+  animation-delay: 2.2s;
+}
+
 
 
 @keyframes bob {
@@ -97,32 +130,19 @@ h1 {
   }
 }
 
-@keyframes bob2 {
+@keyframes bobskew {
   0% {
-    transform: rotate(2deg);
+    transform: skew(4deg);
   }
 
-  /* 25% {
-    transform: rotate(2deg);
-  }
-
-  50% {
-    transform: rotate(-0deg);
-  }
-
-  75% {
-    transform: rotate(-2deg);
-  } */
 
   100% {
-    transform: rotate(-2deg);
+    transform: skew(-4deg);
   }
 
-
-
-
-
 }
+
+
 
 @keyframes shade {
 
@@ -137,14 +157,70 @@ h1 {
   }
 }
 
+@keyframes shade2 {
+
+  0% {
+    translate: 4px
+  }
+
+
+
+  100% {
+    translate: -4px
+  }
+}
+
+@keyframes flash {
+
+  0% {
+    color: red;
+  }
+
+
+
+  100% {
+    color: white;
+  }
+}
+
+@keyframes appear {
+
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#path5 {
+  fill: #ff6900 !important;
+}
+
 #path3-5 {
   transform-origin: center;
   transform: translateY(0px);
 
   transform-box: fill-box;
   animation:
-    shade .4s ease-in infinite alternate-reverse;
+    shade .3s ease-in infinite alternate-reverse,
+    shade2 .6s ease-in-out infinite alternate-reverse;
 
+
+}
+
+.snob {
+  transform-origin: bottom;
+  transform-box: fill-box;
+  /* Syntax: name | duration | iteration-count | delay */
+  animation:
+    bob .3s ease-in infinite alternate,
+    bobskew .6s ease-in-out infinite alternate;
 }
 
 .blu {
@@ -165,13 +241,4 @@ h1 {
   transform-origin: top;
   transform-box: fill-box;
   scale: 1 10000%;
-}
-
-.snob {
-  transform-origin: bottom;
-  transform-box: fill-box;
-  /* Syntax: name | duration | iteration-count | delay */
-  animation:
-    bob .4s ease-in infinite alternate,
-    bob2 .8s ease-in-out infinite alternate;
 }

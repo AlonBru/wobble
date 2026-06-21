@@ -5,7 +5,7 @@ import Snow from './assets/snojito_b.svg?react'
 import './App.css'
 
 function App() {
-  
+
   return (
     <>
         <div className="hero">
@@ -14,12 +14,13 @@ function App() {
 
           <h1 style={{
           }}>
-            Get well
+            <span>Get well</span>
           </h1>
           <h1 style={{
             
           }}>
-            so fucking soon
+            
+            <span className='n1'>so</span> <span className='n1'>fucking</span> <span className='n1'>soon</span>
           </h1>
           </div>
         </div>
