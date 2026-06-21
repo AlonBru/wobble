@@ -48,9 +48,9 @@
 
 .hero {
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
-  justify-items: center;
+  justify-items: end;
   align-items: end;
   background-image: linear-gradient(rgb(103, 103, 156), rgb(216, 230, 165));
 }
@@ -133,7 +133,7 @@ svg {
 #path3-5 {}
 
 .blu {
-  fill: rgb(6 55 129) !important;
+  fill: #00125f !important;
   width: 2000%;
   translate: -50%;
   transform-origin: bottom;
