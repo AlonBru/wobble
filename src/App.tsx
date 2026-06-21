@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// @ts-ignore
 import Snow from './assets/snojito_b.svg?react'
 // import MyIcon from './assets/icon.svg?react'
 
