@@ -88,36 +88,59 @@ h1 {
   font-weight: 400;
   font-style: normal;
   color: white;
+  color: rgb(251, 214, 220);
   font-size: 12.2vw;
+}
+
+@media (min-width:600px) {
+  h1 {
+    font-size: 4rem;
+
+  }
+
+  .h-c {
+    line-height: 4rem;
+
+  }
+}
+
+.n-1 {
+
+  animation-delay: .5s;
 }
 
 h1 span {
   opacity: -0;
   animation:
-    appear .7s ease-in-out .5s 1;
+    appear 0.7s ease-in-out 1.8s 1;
   animation-fill-mode: forwards;
   display: inline-block;
 }
 
-.n-1 {
-
-  animation-delay: -.5s;
-}
 
 .n1 {
-
-  animation-delay: 1.4s;
+  transform: translateX(-20px);
+  animation-delay: 3s;
 }
 
-.n1:nth-child(2) {
+.n2 {
   animation:
-    appear .7s ease-in-out .5s 1, flash .6s ease-in-out .5s infinite alternate;
-  animation-delay: 1.8s, 2.3s;
-  animation-fill-mode: forwards, both;
+    appear .7s ease-in-out .5s 1;
+  animation-delay: 3.5s;
+  animation-fill-mode: forwards;
 }
 
-.n1:nth-child(3) {
-  animation-delay: 2.2s;
+.n2:hover {
+  animation:
+    appear .7s ease-in-out .5s 1, flash .4s ease-in-out 0s infinite alternate;
+  animation-delay: 3.5s, 0;
+  animation-fill-mode: forwards, forwards;
+  /* animation-duration: .7s, 0.1s; */
+
+}
+
+.n3 {
+  animation-delay: 4.0s;
 }
 
 
@@ -178,13 +201,13 @@ h1 span {
 @keyframes flash {
 
   0% {
-    color: red;
+    color: rgba(255, 0, 0, 0.4);
   }
 
 
 
   100% {
-    color: white;
+    color: orange;
   }
 }
 
@@ -198,7 +221,7 @@ h1 span {
 
 
   100% {
-    transform: translateY(0);
+    transform: translateY(0) translateX(0);
     opacity: 1;
   }
 }
@@ -246,4 +269,11 @@ h1 span {
   transform-origin: top;
   transform-box: fill-box;
   scale: 1 10000%;
+}
+
+button {
+  animation: appear .3s ease-in forwards;
+  opacity: 0;
+  animation-delay: 5s;
+  /* background: white; */
 }
